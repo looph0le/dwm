@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const int startwithgaps      = 5;
+static const int startwithgaps      = 10;
 static const int gappx              = 5;
 static const unsigned int snap      = 10;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
@@ -32,7 +32,7 @@ static const char *colors[][3]      = {
 #include </usr/include/X11/XF86keysym.h>
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " " };
+static const char *tags[] = { " ", " ", " ", " ", " ", " "};
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", norm_bg, "-nf", norm_fg, "-sb", sel_fg, "-sf", sel_bg, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont };
 static const char *termcmd[]  = { "kitty", NULL };
 /*volume configs*/
 static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
