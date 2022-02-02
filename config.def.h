@@ -20,7 +20,6 @@ static const char dmenufont[]       = "FantasqueSansMono Nerd Font:size=12";
 //};
 
 #include</home/looph0le/.cache/wal/colors-wal-dwm.h>
-#include </usr/include/X11/XF86keysym.h>
 
 /* tagging */
 //static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
@@ -64,11 +63,6 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run" };
 static const char *termcmd[]  = { "st", NULL };
-/*volume configs*/
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
-
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -108,9 +102,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY,                       XK_F11, spawn, {.v = downvol } },
-	{ MODKEY,                       XK_F9,  spawn, {.v = mutevol } },
-	{ MODKEY,                       XK_F12, spawn, {.v = upvol   } },
 };
 
 /* button definitions */
