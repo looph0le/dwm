@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int borderpx  = 5;        /* border pixel of windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 12;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FantasqueSansMono Nerd Font:pixelsize=16:antialias=true:autohint=true"};
+static const char *fonts[]          = { "SFMono Nerd Font Mono:pixelsize=12:weight=bold:antialias=true:autohint=true"};
 static const char dmenufont[]       = "JetBrains Mono:size=10";
 static char normbgcolor[]           = "#000000";
 static char normbordercolor[]       = "#444444";
@@ -22,8 +22,8 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " "};
-//static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+//static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " "};
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 //static const char *tags[] = { "looph0le", "[TERM]", "[WEB]", "[MESSAGE]", "[RECORDING]", "[MUSIC]", "[SECRET]"};
 
 static const Rule rules[] = {
@@ -35,7 +35,6 @@ static const Rule rules[] = {
 	{ "TelegramDesktop",    NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "obs",                NULL,     NULL,           0,         1,          0,           0,        -1 },
 	{ "Lutris",             NULL,     NULL,           0,         1,          0,           0,        -1 },
-	{ "firefox",   		NULL,     NULL,           1 << 2,    0,          0,          -1,        -1 },
 	{ "St",                 NULL,     NULL,           0,         0,          1,           0,        -1 },
 	{ NULL,                 NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 };
@@ -72,7 +71,7 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-p", "Run: "};
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *termcmd[]  = { "alacritty", "-e", "fish", NULL };
 
 static Key keys[] = {
         /* modifier                     key        function        argument */
