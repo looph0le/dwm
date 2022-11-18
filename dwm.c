@@ -1128,11 +1128,11 @@ loadxrdb()
       xrdb = XrmGetStringDatabase(resm);
 
       if (xrdb != NULL) {
-	XRDB_LOAD_COLOR("dwm.color0", normbordercolor);
-	XRDB_LOAD_COLOR("dwm.color0", selbordercolor);
+	XRDB_LOAD_COLOR("dwm.color2", normbordercolor);
+	XRDB_LOAD_COLOR("dwm.color2", selbordercolor);
 	XRDB_LOAD_COLOR("dwm.color0", normbgcolor);
-	XRDB_LOAD_COLOR("dwm.color4", normfgcolor);
-	XRDB_LOAD_COLOR("dwm.color3", selfgcolor);
+	XRDB_LOAD_COLOR("dwm.color2", normfgcolor);
+	XRDB_LOAD_COLOR("dwm.color6", selfgcolor);
 	XRDB_LOAD_COLOR("dwm.color0", selbgcolor);
       }
     }
@@ -1185,6 +1185,8 @@ manage(Window w, XWindowAttributes *wa)
 	updatewindowtype(c);
 	updatesizehints(c);
 	updatewmhints(c);
+    c->x = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
+	c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
 	XSelectInput(dpy, w, EnterWindowMask|FocusChangeMask|PropertyChangeMask|StructureNotifyMask);
 	grabbuttons(c, 0);
 	if (!c->isfloating)
@@ -1857,6 +1859,10 @@ togglefloating(const Arg *arg)
 	if (selmon->sel->isfloating)
 		resize(selmon->sel, selmon->sel->x, selmon->sel->y,
 			selmon->sel->w, selmon->sel->h, 0);
+
+        selmon->sel->x = selmon->sel->mon->mx + (selmon->sel->mon->mw - WIDTH(selmon->sel)) / 2;
+        selmon->sel->y = selmon->sel->mon->my + (selmon->sel->mon->mh - HEIGHT(selmon->sel)) / 2;
+
 	arrange(selmon);
 }
 
