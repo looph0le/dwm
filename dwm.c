@@ -1128,10 +1128,10 @@ loadxrdb()
       xrdb = XrmGetStringDatabase(resm);
 
       if (xrdb != NULL) {
-	XRDB_LOAD_COLOR("dwm.color1", normbordercolor);
-	XRDB_LOAD_COLOR("dwm.color1", selbordercolor);
+	XRDB_LOAD_COLOR("dwm.color2", normbordercolor);
+	XRDB_LOAD_COLOR("dwm.color2", selbordercolor);
 	XRDB_LOAD_COLOR("dwm.color0", normbgcolor);
-	XRDB_LOAD_COLOR("dwm.color1", normfgcolor);
+	XRDB_LOAD_COLOR("dwm.color2", normfgcolor);
 	XRDB_LOAD_COLOR("dwm.color6", selfgcolor);
 	XRDB_LOAD_COLOR("dwm.color0", selbgcolor);
       }

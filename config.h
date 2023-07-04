@@ -7,7 +7,7 @@ static const unsigned int snap      = 12;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:pixelsize=14:style=bold:antialias=true:autohint=true", "Symbola:pixelsize=14"};
+static const char *fonts[]          = { "Sarasa Fixed Slab SC:pixelsize=16:style=normal:antialias=true:autohint=true", "Symbola:pixelsize=14"};
 static const char dmenufont[]       = "JetBrains Mono:size=10";
 static char normbgcolor[]           = "#000000";
 static char normbordercolor[]       = "#444444";
