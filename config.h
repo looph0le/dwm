@@ -7,7 +7,7 @@ static const unsigned int snap      = 12;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Sarasa Fixed Slab SC:pixelsize=16:style=normal:antialias=true:autohint=true", "Symbola:pixelsize=14"};
+static const char *fonts[]          = { "SF Mono:pixelsize=15:style=italic:weight=bold:antialias=true:autohint=true", "Symbola:pixelsize=14"};
 static const char dmenufont[]       = "JetBrains Mono:size=10";
 static char normbgcolor[]           = "#000000";
 static char normbordercolor[]       = "#444444";
@@ -22,9 +22,9 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-//static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " "};
+static const char *tags[] = { " ", " ", " ", " ", " ", " ", " ", " "};
 // static const char *tags[] = { "💼", "🤙", "🦊", "🎉", "🎮", "🥁", "🔫", "🙃"};
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+//static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 //static const char *tags[] = { "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 //static const char *tags[] = { "looph0le", "[TERM]", "[WEB]", "[MESSAGE]", "[RECORDING]", "[MUSIC]", "[SECRET]"};
 
@@ -72,8 +72,8 @@ static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "togg
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run" };
-static const char *termcmd[]  = { "alacritty", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-p", "Run:" };
+static const char *termcmd[]  = { "kitty", NULL };
 
 static Key keys[] = {
         /* modifier                     key        function        argument */
